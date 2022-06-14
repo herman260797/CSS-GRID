@@ -1,0 +1,54 @@
+#container{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: repeat(4, minmax(250px, auto));
+    grid-gap: 5px;
+    grid-template-areas: 
+        "entete entete entete entete navigation"
+        "section section section section navigation"
+        "section section section section aside"
+        "pied pied pied pied aside"
+        
+    ;
+}
+
+
+#container>* {
+   background-color: red;
+    padding: 45px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    
+ 
+}
+
+header{
+    grid-area: entete;
+}
+section{
+    grid-area: section;
+}
+nav{
+    grid-area: navigation;
+}
+aside{
+    grid-area: aside;
+}
+footer{
+    grid-area: pied;
+}
+
+@media screen and (max-width:768px){
+    #container{
+     
+      grid-template-areas: 
+        "entete entete entete entete entete"
+        "navigation navigation navigation navigation navigation"
+        "section section section section section"
+          "aside aside aside aside aside"
+        "pied pied pied pied pied"
+    }
+}
